@@ -70,7 +70,7 @@ date: "2024-06-03"
 ## Related Documents
 
 - FSL Repo
-    - https://github.com/Condor-Performance-Modeling/fsl
+    - https://github.com/condorcomputing/fsl
 - Olympia Repo
     - https://github.com/riscv-software-src/riscv-perf-model
 - RISC-V Organization Specifications
