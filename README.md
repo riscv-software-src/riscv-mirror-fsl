@@ -7,17 +7,17 @@ Repo for FSL Interpreter, FSL API and a fusion implementation
 - fsl/docs   - API and interpreter documentation
 - fsl/interp - Interpreter source and stand alone tests
 - fsl/fusion - Instruction fusion implementation for Olympia
-- fsl/test   - Combined API and interpreter tests 
+- fsl/test   - Combined API and interpreter tests
 
 # Submodules
 
-FSL has a copy of the cpm.mavis sub-module, https://github.com/Condor-Performance-Modeling/cpm.mavis
- 
+FSL has a copy of the mavis sub-module, https://github.com/sparcians/mavis
+
 # Quick start
 
 ```
-git clone --recurse-submodules https://github.com/Condor-Performance-Modeling/fsl.git
-cd fsl
+git clone --recurse-submodules git@github.com:riscv-software-src/riscv-mirror-fsl
+cd riscv-mirror-fsl
 mkdir release
 cd release
 cmake ..
@@ -33,7 +33,7 @@ See below for user guides and references.
 
 # Documentation - fsl/docs
 
-Some of the references to docs below are forward looking to future docs. 
+Some of the references to docs below are forward looking to future docs.
 
 ```
   docs/md/FSL_USER_REF.md           -- Fusion/Fracture Specification Language
@@ -69,4 +69,3 @@ Some of the references to docs below are forward looking to future docs.
   test/interp/syntax_tests          -- Syntax example used as part of the
                                        regression.
 ```
-

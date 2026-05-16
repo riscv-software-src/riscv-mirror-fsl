@@ -2,18 +2,18 @@
 include ../../Vars.mk
 
 FSL_INC    = -I../..
-MAVIS_INC  = -I../../modules/cpm.mavis
+MAVIS_INC  = -I../../modules/mavis
 CMN_INC    = -I../common
 INTERP_LIB = -L../../fsl_interp/lib -lfslinterp
-MAVIS_LIB  = -L../../modules/cpm.mavis/release  -lmavis
+MAVIS_LIB  = -L../../modules/mavis/release  -lmavis
 
 ALL_SRC = $(wildcard src/*.cpp)
 SRC_OBJ = $(subst src,obj,$(ALL_SRC:.cpp=.o))
-ALL_OBJ = $(SRC_OBJ) 
+ALL_OBJ = $(SRC_OBJ)
 TARGET    = bin/fsttst
 
 INC  = -I./inc $(CMN_INC) $(FSL_INC) $(MAVIS_INC) -I./obj
-LIBS = $(INTERP_LIB) $(MAVIS_LIB) -lboost_program_options 
+LIBS = $(INTERP_LIB) $(MAVIS_LIB) -lboost_program_options
 
 CFLAGS  = $(INC)
 LDFLAGS =
@@ -63,5 +63,3 @@ help-%:
 
 clean:
 	rm -f ./bin/* ./obj/*
-
-

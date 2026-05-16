@@ -6,7 +6,7 @@ include_directories(
     inc
     ../common
     ${CMAKE_SOURCE_DIR}
-    ${CMAKE_SOURCE_DIR}/modules/cpm.mavis
+    ${CMAKE_SOURCE_DIR}/modules/mavis
 )
 
 # Source files
@@ -22,9 +22,9 @@ set(ALL_SRC
 
 # Add executable
 add_executable(test_api_exec ${ALL_SRC})
-target_include_directories(test_api_exec 
-    PRIVATE 
-    ${CMAKE_SOURCE_DIR}/fsl/test/common 
+target_include_directories(test_api_exec
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/fsl/test/common
     ${CMAKE_SOURCE_DIR}
 )
 target_link_libraries(test_api_exec fslinterp mavis boost_program_options)

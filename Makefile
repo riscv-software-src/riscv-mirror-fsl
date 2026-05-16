@@ -7,17 +7,17 @@
         help \
         clean
 
-MAVIS_LIB = modules/cpm.mavis/release/libmavis.a
+MAVIS_LIB = modules/mavis/release/libmavis.a
 
 default: $(MAVIS_LIB) interp api test docs
 
 $(MAVIS_LIB):
-	cd modules/cpm.mavis; \
+	cd modules/mavis; \
 	mkdir -p release; \
 	cd release; \
 	cmake .. -DCMAKE_BUILD_TYPE=Release; \
 	make -j32;
-	
+
 interp: $(MAVIS_LIB)
 	$(MAKE) -C fsl_interp only
 
@@ -27,7 +27,7 @@ api: $(MAVIS_LIB)
 
 test: $(MAVIS_LIB) regress
 
-regress: 
+regress:
 	$(MAKE) -C ./test regress
 
 docs: docs_interp docs_api
