@@ -35,7 +35,7 @@ class FieldExtractor
     //! \note I am overloading RS_MAX when referencing immediate fields
     using FieldName = mavis::InstMetaData::OperandFieldID;
     //! \brief alias used to extract Special fields by enum
-    using SFieldName = mavis::ExtractorIF::SpecialField;
+    using SFieldName = mavis::OpcodeInfo::SpecialField;
 
     //! \brief ...
     using InstPtrType = Instruction<uArchInfo>::PtrType;
