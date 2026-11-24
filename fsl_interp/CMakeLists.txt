@@ -49,6 +49,11 @@ target_compile_options(fslinterp PRIVATE
 add_executable(fsl_interp ${ALL_SRC} ${BISON_OUT} ${FLEX_OUT})
 target_link_libraries(fsl_interp fslinterp ${Boost_LIBRARIES})
 
+# Removes an annoying warning created by the generator
+target_compile_options(fsl_interp PRIVATE
+  $<$<CXX_COMPILER_ID:Clang>:-Wno-error=unneeded-internal-declaration>
+)
+
 # Custom target for cleaning
 add_custom_target(clean-all
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${CMAKE_BINARY_DIR}/bin
