@@ -40,6 +40,11 @@ add_library(fslinterp STATIC ${ALL_SRC} ${BISON_OUT} ${FLEX_OUT})
 # Set the output name for the library
 set_target_properties(fslinterp PROPERTIES OUTPUT_NAME "fsl_interp")
 
+# Removes an annoying warning created by the generator
+target_compile_options(fslinterp PRIVATE
+  $<$<CXX_COMPILER_ID:Clang>:-Wno-error=unneeded-internal-declaration>
+)
+
 # Executable target
 add_executable(fsl_interp ${ALL_SRC} ${BISON_OUT} ${FLEX_OUT})
 target_link_libraries(fsl_interp fslinterp ${Boost_LIBRARIES})
